@@ -1,0 +1,5 @@
+42 -> Integer
+Java -> String
+[один, два] -> ArrayList
+[1, 2, 3] -> int[]
+BankAccount -> BankAccount
