@@ -2,4 +2,6 @@
 Java -> String
 [один, два] -> ArrayList
 [1, 2, 3] -> int[]
+Банковская система инициализирована
+Создание счёта #1
 BankAccount -> BankAccount
