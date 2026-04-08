@@ -45,6 +45,7 @@ public class StringPoolLab {
         System.out.println("s1.equals(s2) : " + s1.equals(s2));
         System.out.println();
 
+
         // TODO: запишите свой прогноз ПЕРЕД запуском
         // Прогноз: ____ (true/false). Причина: ____
         System.out.println("s1 == s3      : " + (s1 == s3));
