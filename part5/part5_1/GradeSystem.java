@@ -58,14 +58,14 @@ public class GradeSystem {
         /** Возвращает описание оценки (например, "Отлично"). */
         public String getDescription() {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-            return null; // TODO: верните description
+            return description;
             // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
 
         /** Возвращает GPA-значение (например, 4.0). */
         public double getGpaValue() {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-            return 0; // TODO: верните gpaValue
+            return gpaValue;
             // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
 
@@ -76,7 +76,7 @@ public class GradeSystem {
          */
         public boolean isPassing() {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-            return false; // TODO: верните this != F && this != D
+            return this != F && this != D; // TODO: верните this != F && this != D
             // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
 
@@ -90,7 +90,12 @@ public class GradeSystem {
          */
         public static Grade fromScore(int score) {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-            return F; // TODO: if (score >= 90) return A; else if (score >= 80) return B; ...
+            if (score >= 90) return A;
+            if (score >= 80) return B;
+            if (score >= 70) return C;
+            if (score >= 60) return D;
+            return F;
+            // TODO: if (score >= 90) return A; else if (score >= 80) return B; ...
             // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
     }
@@ -113,8 +118,15 @@ public class GradeSystem {
         Student {
             // TODO: проверьте, что name не null и не пустое, id > 0
             // Выбросите IllegalArgumentException при нарушении
+            if (name == null || name.isBlank()) {
+                throw new IllegalArgumentException("Имя не может быть пустым или null");
+            }
+            if (id <= 0) {
+                throw new IllegalArgumentException("ID должен быть положительным числом");
+            }
         }
     }
+
 
     // === Метод main ===
 
@@ -145,7 +157,7 @@ public class GradeSystem {
                 new Student("Глеб", 4),
                 new Student("Дмитрий", 5),
                 new Student("Елена", 6),
-                new Student("ваш имя???", 7)
+                new Student("Степан", 7)
         };
         int[] scores = {95, 82, 71, 58, 88, 90, 65};
         var gradeMap = new EnumMap<Grade, List<Student>>(Grade.class);
