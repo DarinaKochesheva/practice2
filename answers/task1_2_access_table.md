@@ -17,13 +17,13 @@
 
 Для каждой строки (A–H) из `HRSystem.java` укажите:
 
-| Строка | Обращаемый член | Модификатор | Компилируется? (да/нет) | Причина |
-|--------|----------------|-------------|:-----------------------:|---------|
-| A | `emp.name` | | | |
-| B | `emp.age` | | | |
-| C | `emp.salary` | | | |
-| D | `emp.password` | | | |
-| E | `emp.getRole()` | | | |
-| F | `emp.promote(5000)` | | | |
-| G | `emp.printSummary()` | | | |
-| H | `emp.validatePassword("secret")` | | | |
+| Строка | Обращаемый член                  | Модификатор                        | Компилируется? (да/нет) | Причина                                                                                                            |
+|--------|----------------------------------|------------------------------------|:-----------------------:|--------------------------------------------------------------------------------------------------------------------|
+| A      | `emp.name`                       | public                             |           да            | public доступен везде - выводит "Иван"                                                                             |
+| B      | `emp.age`                        | protected                          |           нет           | protected доступен в том же пакете или наследникам. HRSystem в другом пакете (company.app) и не наследует Employee |
+| C      | `emp.salary`                     |package-private (без модификатора)	 |           нет           | package-private доступен только в том же пакете (company.core), а HRSystem в company.app                           |
+| D      | `emp.password`                   | private                            |           нет           | private доступен только внутри класса Employee                                                                     |
+| E      | `emp.getRole()`                  | public                             |           да            | public доступен везде - выводит "Employee"                                                                         |
+| F      | `emp.promote(5000)`              | protected                          |           нет           | protected доступен в том же пакете или наследникам. HRSystem в другом пакете и не наследник                        |
+| G      | `emp.printSummary()`             | package-private                    |           нет           | package-private доступен только в том же пакете                                                                    |
+| H      | `emp.validatePassword("secret")` | private                            |           нет           | private доступен только внутри класса Employee                                                                     |
