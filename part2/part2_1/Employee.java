@@ -34,8 +34,8 @@ public abstract class Employee {
      */
     public Employee(String name, double baseSalary) {
         // TODO: сохраните параметры в поля:
-        //   this.name = name;
-        //   this.baseSalary = baseSalary;
+        this.name = name;
+        this.baseSalary = baseSalary;
         // ▼ ВАШ КОД ЗДЕСЬ ▼
 
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
@@ -43,13 +43,13 @@ public abstract class Employee {
 
     public String getName() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return null; // TODO: верните name
+        return name;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public double getBaseSalary() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните baseSalary
+        return baseSalary;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -73,7 +73,7 @@ public abstract class Employee {
      */
     public double totalCompensation() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните baseSalary + calculateBonus()
+        return baseSalary + calculateBonus();
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -86,7 +86,7 @@ public abstract class Employee {
     @Override
     public String toString() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return ""; // TODO: верните name + " | Оклад: " + baseSalary + " | Бонус: " + calculateBonus() + " | Итого: " + totalCompensation()
+        return name + " | Оклад: " + baseSalary + " | Бонус: " + calculateBonus() + " | Итого: " + totalCompensation();
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }
